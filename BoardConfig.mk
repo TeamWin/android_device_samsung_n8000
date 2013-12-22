@@ -20,7 +20,7 @@
 # Inline kernel building
 #FIXME NOT READY YET - NEEDS DEFCONFIG
 TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
-TARGET_KERNEL_CONFIG := cyanogenmod_n8000_defconfig
+TARGET_KERNEL_CONFIG := custom_n8000_defconfig
 
 #Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/n8000/bluetooth
