@@ -23,13 +23,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/omni/config/common.mk)
 
 #$(call inherit-product, device/sample/products/backup_overlay.mk)
-$(call inherit-product, device/samsung/n8000/n8000.mk)
+$(call inherit-product, device/samsung/n8000/device.mk)
 
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := omni_n8000
 PRODUCT_DEVICE := n8000
 PRODUCT_BRAND := samsung
-PRODUCT_MANUFACTURER := samsung
+PRODUCT_MANUFACTURER := Samsung
 PRODUCT_MODEL := GT-N8000
 
 # Set build fingerprint / ID / Product Name ect.
