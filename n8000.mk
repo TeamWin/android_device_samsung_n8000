@@ -14,8 +14,6 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/samsung/n80xx-common/n80xx-common.mk)
-
 LOCAL_PATH := device/samsung/n8000
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -49,3 +47,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PACKAGES += \
 	libsecril-client-sap
+
+$(call inherit-product, device/samsung/n80xx-common/n80xx-common.mk)
