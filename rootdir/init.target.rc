@@ -1,4 +1,14 @@
 on post-fs-data
+
+    # icd
+    exec icd_check
+    chown system system /dev/icd
+    chmod 0644 /dev/icd
+    write /dev/icdr 0
+    chown system system /dev/icdr
+    chmod 0644 /dev/icdr
+    chown system system /dev/tzic
+    
     # IR_LED
     chown system radio /sys/class/sec/sec_ir/ir_send
     chown system radio /sys/class/sec/sec_ir/ir_send_result
@@ -26,18 +36,11 @@ on post-fs-data
 
 on boot
 
-# icd
-service icd /system/bin/icd
-    class main
-    user system
-    group system log
-    onrestart exec icd_check
-
 #cbd
-service cpboot-daemon /sbin/cbd -d
+service cpboot-daemon /sbin/cbd -d -p7
     class main
     user root
-    group radio cache inet misc audio sdcard_rw log
+    group radio cache inet misc audio sdcard_rw log sdcard_r
 
 # GPS
 service gpsd /system/bin/gpsd -c /system/etc/gps.xml
@@ -47,11 +50,6 @@ service gpsd /system/bin/gpsd -c /system/etc/gps.xml
     group system inet sdcard_rw
     seclabel u:r:gpsd:s0
     
-service dmb /system/bin/dmbserver
-    class main
-    user system
-    group radio inet misc audio camera graphics net_bt net_bt_admin sdcard_rw
-
 # TVout
 #service TvoutService_C /system/bin/bintvoutservice
 #     class main

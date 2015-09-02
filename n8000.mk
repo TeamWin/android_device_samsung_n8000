@@ -43,6 +43,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.gprsclass=10
 
 PRODUCT_PACKAGES += \
-	libsecril-client-sap
+	libsecril-client-sap \
+	SamsungServiceMode
 
 $(call inherit-product, device/samsung/n80xx-common/n80xx-common.mk)
