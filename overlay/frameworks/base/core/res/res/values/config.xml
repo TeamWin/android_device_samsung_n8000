@@ -83,9 +83,6 @@
     <!-- The default iface on which to monitor data use -->
     <string name="config_datause_iface">pdp0</string>
     
-    <!-- Is the device LTE capable -->
-    <bool name="config_lte_capable">false</bool>
-
     <!-- Allow the menu hard key to be disabled in LockScreen on some devices -->
     <bool name="config_disableMenuKeyInLockScreen">true</bool>   
 
