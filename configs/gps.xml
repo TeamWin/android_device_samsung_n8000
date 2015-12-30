@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<glgps xmlns="http://www.glpals.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.glpals.com/glconfig.xsd" >
+<glgps xmlns="http://www.glpals.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.glpals.com/ glconfig.xsd" >
   <!--HAL Confguration  -->
   <hal
        acPortName="/dev/ttySAC1"
@@ -8,50 +8,45 @@
        gpioNResetPath="/sys/class/sec/gps/GPS_nRST/value"
        gpioDelayMs="250"
        acNvStoDir="/data/gps/"
-       FactoryTestFilePath="/data/"
 
-       acLogDirectory="/sdcard/gps/broadcom/"
+       acLogDirectory="/data/gps/log/"
 
-       TISEnabled="true"
        LPmode="false"
-       cp-cold-start="false"
-       cp-guard-time-sec="1"
-
-       arp-supl-enable="true"
-       arp-supl-cap-msb="true"
-       arp-supl-cap-msa="true"
+       ReAidingType="0"
+       arp-supl-enable="false"
+       arp-supl-cap-msb="false"
+       arp-supl-cap-msa="false"
        arp-supl-cap-ecid="false"
        arp-supl-use-apn="false"
        acSuplServer="supl.google.com"
        SuplPort="7276"
        tlsCertPath="/system/bin/gps.cer"
        tlsEnable="false"
-       ReAidingIntervalSec="1200"
+       ReAidingIntervalSec="999999"
        SuplUT1Seconds="20"
        SuplUT2Seconds="20"
        SuplUT3Seconds="20"
        SuplVersion="1"
-
-       LbsEnable="true"
+       LbsEnable="false"
        LbsLocal="false"
-       LbsServer="gllto.glpals.com/7day/glo/v2/latest/"
+       LbsServer="BCMLS2.glpals.com"
        LbsPort="7275"
        LbsSyncLto="false"
        SyncLto="true"
        ltoFileName="lto2.dat"
        acLtoDir="/data/gps/"
-       LbsSyncLtoThresholdDays="3"
+       LbsSyncLtoThresholdDays="1"
        LbsTAC="10101222"
+       ctrlPipe="/data/gps/glgpsctrl"
        LbsWlanEnable="false"
-
-       IgnoreJniTime="true"
-       AssertEnabled="false"
+       SensorsEnable="false"
+       SensorsPowerSave="false"
+       SensorsLog="false"
    />
-
   <gll
        LogPriMask="LOG_INFO"
        LogFacMask="LOG_GLLAPI | LOG_NMEA | LOG_RAWDATA"
-       FrqPlan="FRQ_PLAN_26MHZ_2PPM_26MHZ_300PPB"
+       FrqPlan="FRQ_PLAN_26MHZ_2PPM"
        RfType="GL_RF_47511_BRCM_EXT_LNA"
        WarmStandbyTimeout1Seconds="10"
        WarmStandbyTimeout2Seconds="15"
@@ -61,5 +56,4 @@
        EnableLowPowerEls="false"
        EnableLowPowerPmm="true"
    />
-
 </glgps>
