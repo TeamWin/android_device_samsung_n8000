@@ -20,10 +20,13 @@
 # Inline kernel building
 #FIXME NOT READY YET - NEEDS DEFCONFIG
 TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
-TARGET_KERNEL_CONFIG := cyanogenmod_n8000_defconfig
+TARGET_KERNEL_CONFIG := lineageos_n8000_defconfig
 
 #Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/n8000/bluetooth
 
 # assert
 TARGET_OTA_ASSERT_DEVICE := c0,p4noterf,n8000,GT-N8000
+
+# SELinux
+BOARD_SEPOLICY_DIRS += device/samsung/n8000/selinux
