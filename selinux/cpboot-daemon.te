@@ -1,3 +1,0 @@
-type cpboot-daemon, domain;
-
-permissive cpboot-daemon;
